@@ -106,68 +106,56 @@ body{
 
 
 
-/* Contenedor de controles */
+/* CONTROLES */
+
 .controls{
+    position: fixed;
+    bottom:15px;
     display:flex;
     justify-content:center;
-    align-items:center;
-    gap:15px;
-    margin-top:20px;
-    z-index:100;
+    gap:305px;
+    margin-top:25px;
 }
 
-/* Botones */
 .controls button{
-    width:10px;
-    height:10px;
+    width:25px;
+    height:25px;
     border:none;
     border-radius:50%;
-    background:rgba(255,255,255,0.15);
-    backdrop-filter:blur(10px);
-    color:#fff;
-    font-size:22px;
+    background:rgba(255,255,255,.15);
+    color:blueviolet;
+    font-size:14px;
     cursor:pointer;
-    transition:all .3s ease;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
+    transition:.3s;
+    backdrop-filter:blur(10px);
     box-shadow:
         0 5px 15px rgba(0,0,0,.25);
 }
 
-/* Hover PC */
 .controls button:hover{
-    background:rgba(255,255,255,0.25);
+
+    background:rgba(255,255,255,.25);
+
     transform:translateY(-2px);
 }
 
-/* Click */
-.controls button:active{
-    transform:scale(.95);
-}
-
-/* Deshabilitado */
 .controls button:disabled{
-    opacity:.4;
+
+    opacity:.3;
+
     cursor:not-allowed;
+
+    transform:none;
 }
 
-/* Responsive */
-@media (max-width: 768px){
+@media(max-width:768px){
 
     .controls{
         position:fixed;
         bottom:25px;
         left:50%;
+        gap:15px;
         transform:translateX(-50%);
-    }
-
-    .controls button{
-        width:25px;
-        height:25px;
-        font-size:14px;
     }
 
 }
