@@ -29,8 +29,8 @@ body{
     position:relative;
     perspective:3000px;
 
-/*    touch-action:none;*/
-    touch-action:pan-y pinch-zoom;
+ touch-action:none;
+   /* touch-action:pan-y pinch-zoom;*/
     user-select:none;
 }
 
@@ -42,7 +42,7 @@ body{
 
     transition:
         transform 1.2s cubic-bezier(.65,.05,.36,1),
-        box-shadow .8s;
+        box-shadow .8s ease;
 
     transform-style:preserve-3d;
     border-radius:10px;
@@ -72,7 +72,7 @@ body{
     );
 
     opacity:0;
-    transition:.8s;
+    transition:.5s;
 }
 
 .page.flipped{
