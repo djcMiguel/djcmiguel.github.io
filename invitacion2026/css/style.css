@@ -1,0 +1,173 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    background:#1b1b1b;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:auto;
+
+    font-family:sans-serif;
+
+}
+
+.book{
+    width:min(95vw,420px);
+    aspect-ratio:1080/1679;
+    position:relative;
+    perspective:3000px;
+
+/*    touch-action:none;*/
+    touch-action:pan-y pinch-zoom;
+    user-select:none;
+}
+
+.page{
+    position:absolute;
+    inset:0;
+
+    transform-origin:left center;
+
+    transition:
+        transform 1.2s cubic-bezier(.65,.05,.36,1),
+        box-shadow .8s;
+
+    transform-style:preserve-3d;
+    border-radius:10px;
+    overflow:hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);    
+}
+
+.page img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
+}
+
+.page::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        to left,
+        rgba(0,0,0,.35),
+        transparent 35%
+    );
+
+    opacity:0;
+    transition:.8s;
+}
+
+.page.flipped{
+    transform:rotateY(-180deg);
+}
+
+.page.flipped::after{
+    opacity:1;
+} 
+
+
+
+
+
+#page1{
+    z-index:4;
+}
+
+#page2{
+    z-index:3;
+}
+
+#page3{
+    z-index:2;
+}
+
+#page4{
+    z-index:1;
+}
+
+
+
+
+/* Contenedor de controles */
+.controls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+    z-index:100;
+}
+
+/* Botones */
+.controls button{
+    width:10px;
+    height:10px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+    transition:all .3s ease;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.25);
+}
+
+/* Hover PC */
+.controls button:hover{
+    background:rgba(255,255,255,0.25);
+    transform:translateY(-2px);
+}
+
+/* Click */
+.controls button:active{
+    transform:scale(.95);
+}
+
+/* Deshabilitado */
+.controls button:disabled{
+    opacity:.4;
+    cursor:not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+
+    .controls{
+        position:fixed;
+        bottom:25px;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+    .controls button{
+        width:25px;
+        height:25px;
+        font-size:14px;
+    }
+
+}
