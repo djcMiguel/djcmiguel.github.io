@@ -4,6 +4,17 @@ const prev = document.getElementById('prev');
 
 let currentPage = 0;
 
+
+function updateButtons(){
+
+    prev.disabled = currentPage === 0;
+
+    next.disabled = currentPage === pages.length - 1;
+}
+
+updateButtons();
+
+
 pages.forEach((page,index)=>{
 
     page.addEventListener('click',()=>{
@@ -12,7 +23,7 @@ pages.forEach((page,index)=>{
 
             page.classList.add('flipped');
             currentPage++;
-
+            updateButtons();
         }
 
     });
@@ -25,6 +36,7 @@ prev.addEventListener('click', () => {
 
         currentPage--;
         pages[currentPage].classList.remove('flipped');
+        updateButtons();
 
     }
 
@@ -37,6 +49,7 @@ next.addEventListener('click', () => {
         pages[currentPage].classList.add('flipped');
 
         currentPage++;
+        updateButtons();
     }
 
 });
