@@ -24,11 +24,12 @@ body{
 }
 
 .book{
-    width:min(95vw,420px);
+    width:min(95vw,500px);
     aspect-ratio:1080/1679;
     position:relative;
     perspective:3000px;
-    touch-action:pan-y pinch-zoom;
+
+   touch-action:pan-y pinch-zoom;
     user-select:none;
 }
 
@@ -116,8 +117,8 @@ body{
 }
 
 .controls button{
-    width:25px;
-    height:25px;
+    width:35px;
+    height:35px;
     border:none;
     border-radius:50%;
     background:rgba(255,255,255,.15);
@@ -154,6 +155,12 @@ body{
         left:50%;
         gap:15px;
         transform:translateX(-50%);
+    }
+
+    .controls button{
+        width:55px;
+        height:55px;
+        color:#fff;
     }
 
 }
