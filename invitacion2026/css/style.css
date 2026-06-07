@@ -24,7 +24,7 @@ body{
 }
 
 .book{
-    width:min(95vw,500px);
+    width:min(95vw,600px);
     aspect-ratio:1080/1679;
     position:relative;
     perspective:3000px;
