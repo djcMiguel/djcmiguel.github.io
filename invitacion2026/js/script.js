@@ -22,7 +22,7 @@ pages.forEach((page,index)=>{
         if(currentPage < pages.length - 1){
 
             page.classList.add('flipped');
-            if(current === 0){
+            if(currentPage === 0){
                 launchConfetti();
             }
             currentPage++;
@@ -50,7 +50,7 @@ next.addEventListener('click', () => {
     if(currentPage < pages.length - 1){
 
         pages[currentPage].classList.add('flipped');
-        if(current === 0){
+        if(currentPage === 0){
              launchConfetti();
         }
         currentPage++;
