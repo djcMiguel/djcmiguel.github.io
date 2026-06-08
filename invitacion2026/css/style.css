@@ -12,15 +12,28 @@ body{
 
 body{
     background:#1b1b1b;
+    min-height:100vh;
+    overflow:auto;
 
+    padding:20px;
+    /*
+    display:flex;
+    justify-content:center;
+    align-items:center;
+*/
+    overflow:auto;
+    -webkit-overflow-scrolling:touch;
+
+    font-family:sans-serif;
+
+}
+
+.viewer{
     display:flex;
     justify-content:center;
     align-items:center;
 
-    overflow:auto;
-
-    font-family:sans-serif;
-
+    min-height:100vh;
 }
 
 .book{
