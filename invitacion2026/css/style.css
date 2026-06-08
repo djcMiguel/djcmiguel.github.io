@@ -29,7 +29,7 @@ body{
     position:relative;
     perspective:3000px;
 
-   touch-action:pan-y pinch-zoom;
+   touch-action:auto;
     user-select:none;
 }
 
